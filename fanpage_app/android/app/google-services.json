@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "702335981889",
+    "project_id": "fanpage-dc923",
+    "storage_bucket": "fanpage-dc923.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702335981889:android:a274c39ebc792bd11ce9c0",
+        "android_client_info": {
+          "package_name": "com.mappdev.fanpage_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702335981889-3cpa2e08qtullig6g7nahv38k5c5ffjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvWO-EexUD8zs0IYCMoTe5FMas4tqzqwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702335981889-3cpa2e08qtullig6g7nahv38k5c5ffjh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
