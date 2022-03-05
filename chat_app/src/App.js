@@ -28,21 +28,10 @@ function App() {
   // when signed in, returns user object, otherwise: null
   const [user] = useAuthState(auth);
 
-  // function RankConvo() {
-  //   return(
-  //     <form>
-  //           <input type="number" name="rating" min="0" max="10"/>
-  //           <input type="submit" value="Rank"/>
-  //     </form>
-  //   )
-  // }
-
   return (
     <div className="App">
       <header className="App-header">
         <h1>ChatApp</h1>
-        
-        {/* <button onClick={RankConvo}>Rank Convo</button> */}
         <form className='rank'>
           <input type="number" name="rating" min="0" max="5"/>
           <input type="submit" value="Rank"/>
@@ -56,16 +45,6 @@ function App() {
     </div>
   );
 }
-
-// function RankConvo() {
-//   return(
-//     <form>
-//           <input type="number" name="rating" min="0" max="10"/>
-//           <input type="submit" value="Rank"/>
-//     </form>
-//   )
-// }
-
 
 function SignIn() {
   // insantiate a provider with google so user can sign in w a google popup
