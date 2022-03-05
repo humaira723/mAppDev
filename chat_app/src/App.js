@@ -28,10 +28,25 @@ function App() {
   // when signed in, returns user object, otherwise: null
   const [user] = useAuthState(auth);
 
+  // function RankConvo() {
+  //   return(
+  //     <form>
+  //           <input type="number" name="rating" min="0" max="10"/>
+  //           <input type="submit" value="Rank"/>
+  //     </form>
+  //   )
+  // }
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Chat App</h1>
+        <h1>ChatApp</h1>
+        
+        {/* <button onClick={RankConvo}>Rank Convo</button> */}
+        <form className='rank'>
+          <input type="number" name="rating" min="0" max="5"/>
+          <input type="submit" value="Rank"/>
+        </form>
         <SignOut />
       </header>
       <section>
@@ -42,6 +57,16 @@ function App() {
   );
 }
 
+// function RankConvo() {
+//   return(
+//     <form>
+//           <input type="number" name="rating" min="0" max="10"/>
+//           <input type="submit" value="Rank"/>
+//     </form>
+//   )
+// }
+
+
 function SignIn() {
   // insantiate a provider with google so user can sign in w a google popup
   const handleGoogleSignIn = () => {
@@ -50,7 +75,11 @@ function SignIn() {
   }
   
   return(
-    <button className="sign-in" onClick={handleGoogleSignIn}>Sign In with Google</button>
+    <div>
+      <h2>Welcome to ChatApp!</h2>
+      <h4>Please sign in below.</h4>
+      <button className="sign-in" onClick={handleGoogleSignIn}>Sign In with Google</button>
+    </div>
   )
 }
 
@@ -93,9 +122,9 @@ function ChatRoom() {
         {messages && messages.map(chat => <ChatMessage key={chat.id} message={chat}/>)}
       </div>
 
-      <form onSubmit={sendMessage}>
-        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-        <button type="submit">Send</button>
+      <form className='message_form' onSubmit={sendMessage}>
+        <input placeholder='Message...' value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+        <button className="send" type="submit">Send</button>
       </form>
     </>
   )
