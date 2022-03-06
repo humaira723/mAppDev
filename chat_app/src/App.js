@@ -48,7 +48,7 @@ function App() {
 
 function SignIn() {
   // insantiate a provider with google so user can sign in w a google popup
-  const handleGoogleSignIn = () => {
+  const handleGoogleLogin = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
@@ -57,14 +57,14 @@ function SignIn() {
     <div>
       <h2>Welcome to ChatApp!</h2>
       <h4>Please sign in below.</h4>
-      <button className="sign-in" onClick={handleGoogleSignIn}>Sign In with Google</button>
+      <button className="sign-in" onClick={handleGoogleLogin}>Google Login</button>
     </div>
   )
 }
 
 function SignOut() {
   return auth.currentUser && (
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+    <button onClick={() => auth.signOut()}>Log Out</button>
   )
 }
 
@@ -110,7 +110,7 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message;
+  const { text, uid } = props.message;
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (
